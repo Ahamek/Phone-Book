@@ -2,13 +2,13 @@ package model;
 
 import java.util.*;
 
-public class TeleBook {
+public class PhoneBook {
     private Map<String, Contact> contacts = new TreeMap<>();
 
-    public TeleBook() {
+    public PhoneBook() {
     }
 
-    public TeleBook(Map<String, Contact> contacts) {
+    public PhoneBook(Map<String, Contact> contacts) {
         this.contacts = contacts;
     }
 
