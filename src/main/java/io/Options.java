@@ -19,7 +19,7 @@ public enum Options {
 
     public static Options convertToOption(int option){
         if (option >= values().length || option < 0){
-            throw new NoSuchElementException("There is no such option ");
+            throw new NoSuchElementException("There is no such option to choose");
         }
         return values()[option];
     }
