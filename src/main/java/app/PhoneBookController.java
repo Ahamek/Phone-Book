@@ -2,19 +2,23 @@ package app;
 
 import animation.Loader;
 import io.Options;
+import io.file.FileUtils;
 import model.Contact;
 import model.PhoneBook;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class PhoneBookController {
-    private final PhoneBook phoneBook = new PhoneBook();
+    private final PhoneBook phoneBook;
     private final Scanner input = new Scanner(System.in);
+
 
     public PhoneBookController() {
         Loader loader = new Loader();
+        phoneBook = FileUtils.read();
     }
 
     public void mainLoop() {
@@ -107,6 +111,12 @@ public class PhoneBookController {
 
     private void close() {
         input.close();
+        try {
+            FileUtils.save(phoneBook);
+            System.out.println("Zapisano zmiany.");
+        } catch (IOException e) {
+            System.err.println("Nie uda³o siê zapisaæ zmian");
+        }
         System.out.println("Bye bye.");
     }
 }

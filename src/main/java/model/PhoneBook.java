@@ -2,7 +2,7 @@ package model;
 
 import java.util.*;
 
-public class PhoneBook {
+public class PhoneBook implements Iterable<Contact>{
     private Map<String, Contact> contacts = new TreeMap<>();
 
     public PhoneBook() {
@@ -45,5 +45,10 @@ public class PhoneBook {
                 result.add(contact);
         }
         return result;
+    }
+
+    @Override
+    public Iterator<Contact> iterator() {
+        return contacts.values().iterator();
     }
 }
