@@ -25,6 +25,10 @@ public class Contact implements Comparable<Contact> {
         this.telephone = telephone;
     }
 
+    public String toCSV() {
+        return name + ";" + telephone;
+    }
+
     @Override
     public int compareTo(Contact c) {
         return this.name.compareTo(c.name);
