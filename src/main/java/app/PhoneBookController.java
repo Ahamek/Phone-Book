@@ -1,5 +1,6 @@
 package app;
 
+import animation.Loader;
 import io.Options;
 import model.Contact;
 import model.PhoneBook;
@@ -11,6 +12,10 @@ import java.util.Scanner;
 public class PhoneBookController {
     private final PhoneBook phoneBook = new PhoneBook();
     private final Scanner input = new Scanner(System.in);
+
+    public PhoneBookController() {
+        Loader loader = new Loader();
+    }
 
     public void mainLoop() {
         Options option = null;
