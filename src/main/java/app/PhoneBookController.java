@@ -49,18 +49,18 @@ public class PhoneBookController {
     }
 
     private void delete() {
-        System.out.println("Podaj nazwê rekordu do usuniêcia:");
+        System.out.println("Enter the name of the record to be deleted:");
         String name = input.nextLine();
         boolean removed = phoneBook.remove(name);
         if(removed) {
-            System.out.println("Rekord usuniêty");
+            System.out.println("Record deleted.");
         } else {
-            System.out.println("Nie ma rekordu o takiej nazwie");
+            System.out.println("There is no record with such a name");
         }
     }
 
     private void searchByTelephone() {
-        System.out.println("Provide a phone number or part of it: ");
+        System.out.println("Provide a phone number or part of it:");
         String telFragment = input.nextLine();
         List<Contact> contacts = phoneBook.findByTelephone(telFragment);
         if (contacts.isEmpty()) {
@@ -72,7 +72,7 @@ public class PhoneBookController {
     }
 
     private void searchByName() {
-        System.out.println("Provide a phone number or part of it: ");
+        System.out.println("Provide a phone number or part of it:");
         String nameFragment = input.nextLine();
         List<Contact> contacts = phoneBook.findByName(nameFragment);
         if(contacts.isEmpty()) {
@@ -84,19 +84,19 @@ public class PhoneBookController {
     }
 
     private void addContact() {
-        System.out.println("Podaj nazwê kontaktu:");
+        System.out.println("Enter the contact name:");
         String name = input.nextLine();
-        System.out.println("Podaj nr telefonu:");
+        System.out.println("Enter the phone-number:");
         String telephone = input.nextLine();
         try {
             boolean add = phoneBook.add(name, telephone);
             if (add) {
-                System.out.println("Rekord dodany.");
+                System.out.println("Record added.");
             } else {
-                System.out.println("Nie mo¿na dodaæ rekordu. Wpis o takiej nazwie ju¿ istnieje.");
+                System.out.println("Record cannot be added. An entry with this name already exists.");
             }
         } catch(IllegalArgumentException e) {
-            System.err.println("Nazwa ani numer telefonu nie mog¹ byæ puste");
+            System.err.println("The name and phone number cannot be blank.");
         }
     }
 
