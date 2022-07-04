@@ -33,8 +33,9 @@ public class PhoneBookController {
     }
 
     private Options chooseOption() {
-
-        return Options.CLOSE; // TODO Add other option
+        int option = input.nextInt();
+        input.nextLine();
+        return Options.convertToOption(option);
     }
 
     private void executeOption(Options options) {
