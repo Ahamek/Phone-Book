@@ -9,7 +9,7 @@ public class Loader {
 
     public Loader() {
         double progress = 1.0;
-        for (int i = 0; i <= 54; i++) {
+        for (int i = 0; i <= 55; i++) {
             String progressBar = getProgressBar(progress);
             char progressIndicator = i % 2 == 0 ? '.' : '*';
             System.out.printf(PRINT_FORMAT, progressIndicator, progress, progressBar);
