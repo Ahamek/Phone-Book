@@ -3,11 +3,11 @@ package io;
 import java.util.NoSuchElementException;
 
 public enum Options {
-    ADD_CONTACT(0, "Dodaj kontakt"),
-    SEARCH_BY_NAME(1, "Szukaj po nazwie"),
-    SEARCH_BY_TEL(2, "Szukaj po telefonie"),
-    DELETE(3, "Usuñ"),
-    CLOSE(4, "Koniec");
+    ADD_CONTACT(0, "Add new contact"),
+    SEARCH_BY_NAME(1, "Search by name"),
+    SEARCH_BY_TEL(2, "Search by phone number"),
+    DELETE(3, "Delete contact"),
+    CLOSE(4, "End the program");
 
     private final int shortcut;
     private final String description;

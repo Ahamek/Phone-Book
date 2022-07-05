@@ -17,7 +17,7 @@ public class PhoneBookController {
 
 
     public PhoneBookController() {
-        Loader loader = new Loader();
+        new Loader();
         phoneBook = FileUtils.read();
     }
 

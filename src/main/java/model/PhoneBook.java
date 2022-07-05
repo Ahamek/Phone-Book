@@ -2,7 +2,7 @@ package model;
 
 import java.util.*;
 
-public class PhoneBook implements Iterable<Contact>{
+public class PhoneBook implements Iterable<Contact> {
     private Map<String, Contact> contacts = new TreeMap<>();
 
     public PhoneBook() {
