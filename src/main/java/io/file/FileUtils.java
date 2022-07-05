@@ -21,18 +21,14 @@ public class FileUtils {
         writer.close();
     }
 
-    public static PhoneBook read() {
-        PhoneBook book = null;
-        try {
-            var buffReader = new BufferedReader(new FileReader(FILE_NAME));
-            Map<String, Contact> contacts = buffReader.lines()
-                    .map(line -> line.split(";"))
-                    .map(split -> new Contact(split[0], split[1]))
-                    .collect(Collectors.toMap(Contact::getName, Function.identity()));
-            book = new PhoneBook(new TreeMap<>(contacts));
-        } catch (FileNotFoundException e) {
-            System.err.println("There was a problem during file loading. Try Again!");
-        }
-        return book != null? book : new PhoneBook();
+    public static PhoneBook read() throws FileNotFoundException {
+        PhoneBook book;
+        var buffReader = new BufferedReader(new FileReader(FILE_NAME));
+        Map<String, Contact> contacts = buffReader.lines()
+                .map(line -> line.split(";"))
+                .map(split -> new Contact(split[0], split[1]))
+                .collect(Collectors.toMap(Contact::getName, Function.identity()));
+        book = new PhoneBook(new TreeMap<>(contacts));
+        return book;
     }
 }

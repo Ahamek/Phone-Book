@@ -6,19 +6,24 @@ import io.file.FileUtils;
 import model.Contact;
 import model.PhoneBook;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class PhoneBookController {
-    private final PhoneBook phoneBook;
+    private PhoneBook phoneBook = null;
     private final Scanner input = new Scanner(System.in);
 
 
     public PhoneBookController() {
         new Loader();
-        phoneBook = FileUtils.read();
+        try {
+            phoneBook = FileUtils.read();
+        } catch (FileNotFoundException e) {
+            System.err.println("File does not exist. Now has been created!");
+        }
     }
 
     public void mainLoop() {
