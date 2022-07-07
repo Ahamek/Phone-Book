@@ -12,7 +12,7 @@ You can either run this project inside Intellij IDEA or in terminal on Linux/Mac
 Software requirements are as follows:
 
 1. JDK 18
-2. Intellij IDEA (If you are using IDEA to compile/run the game)
+2. Intellij IDEA (If you are using IDEA to compile/run the program)
 
 How to run the program
 -----
