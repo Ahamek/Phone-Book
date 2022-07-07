@@ -2,7 +2,7 @@ package app;
 
 import animation.Loader;
 import io.Options;
-import io.file.FileUtils;
+import io.file.CsvFileManager;
 import model.Contact;
 import model.PhoneBook;
 
@@ -20,7 +20,7 @@ public class PhoneBookController {
     public PhoneBookController() {
         new Loader();
         try {
-            phoneBook = FileUtils.read();
+            phoneBook = CsvFileManager.read();
         } catch (FileNotFoundException e) {
             System.err.println("File does not exist. Now has been created!");
         }
@@ -117,7 +117,7 @@ public class PhoneBookController {
     private void close() {
         input.close();
         try {
-            FileUtils.save(phoneBook);
+            CsvFileManager.save(phoneBook);
             System.out.println("Zapisano zmiany.");
         } catch (IOException e) {
             System.err.println("Nie uda³o siê zapisaæ zmian");
